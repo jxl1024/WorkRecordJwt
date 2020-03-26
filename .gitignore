@@ -1,0 +1,13 @@
+#过滤数据库文件
+*.mdb
+*.ldb
+
+#过滤文件夹bin、obj、release
+[Bb]in/
+[Oo]bj/
+[Rr]elease/
+
+#过滤日志文件
+*.log
+
+.vs/

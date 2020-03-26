@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Edison.Jiang</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+    <PackageReference Include="WordRecord.IRepository" Version="1.0.0" />
+    <PackageReference Include="WordRecord.Repository" Version="1.0.0" />
+    <PackageReference Include="WorkRecord.Data" Version="1.0.0" />
+    <PackageReference Include="WorkRecord.IService" Version="1.0.0" />
+    <PackageReference Include="WorkRecord.Model" Version="1.0.0" />
+    <PackageReference Include="WorkRecord.Service" Version="1.0.0" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkRecord.JwtServer", "WorkRecord.JwtServer\WorkRecord.JwtServer.csproj", "{26DD2C8D-1142-433B-BEF5-FFEB4B78EC93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtServerTest", "JwtServerTest\JwtServerTest.csproj", "{0290E3FD-35EF-440D-ACEC-6F3CCFF704E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26DD2C8D-1142-433B-BEF5-FFEB4B78EC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26DD2C8D-1142-433B-BEF5-FFEB4B78EC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26DD2C8D-1142-433B-BEF5-FFEB4B78EC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26DD2C8D-1142-433B-BEF5-FFEB4B78EC93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0290E3FD-35EF-440D-ACEC-6F3CCFF704E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0290E3FD-35EF-440D-ACEC-6F3CCFF704E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0290E3FD-35EF-440D-ACEC-6F3CCFF704E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0290E3FD-35EF-440D-ACEC-6F3CCFF704E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABD1F7CA-564D-4908-97E1-86E4C86FDF56}
+	EndGlobalSection
+EndGlobal
