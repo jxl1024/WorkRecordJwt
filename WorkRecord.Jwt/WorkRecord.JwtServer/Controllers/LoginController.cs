@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WorkRecord.Common.Helper;
 using WorkRecord.IService.Service;
 using WorkRecord.JwtServer.Jwt;
 using WorkRecord.Model.Entity;
@@ -47,7 +48,7 @@ namespace WorkRecord.JwtServer.Controllers
 
             User user = await _service.GetSingleEntityAsync(keySelector);
 
-            if (null != user && user.Password.Equals(entity.Password))
+            if (null != user && user.Password.Equals(MD5Helper.Get32UpperMD5(entity.Password)))
             {
                 // 生成Token信息
                 TokenInfo token = _helper.CreateToken(user);

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using WorkRecord.Common.Helper;
 using WorkRecord.JwtServer;
 using WorkRecord.Model.Entity;
 using WorkRecord.Model.Jwt;
@@ -63,8 +64,8 @@ namespace WorkRecordTest
             // 1、Arrange
             User entity = new User()
             {
-                Password = "E10ADC3949BA59ABBE56E057F20F883E",
-                Account = "admin",
+                Password = MD5Helper.Get32UpperMD5("123456"),
+                Account = "admin"
             };
 
             var str = JsonConvert.SerializeObject(entity);

@@ -17,6 +17,9 @@ namespace WorkRecord.JwtServer
 {
     public class Startup
     {
+        // 全局跨域策略
+        readonly string MyAllowSpecificOrigins = "MyAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,9 +27,22 @@ namespace WorkRecord.JwtServer
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region 添加跨域服务
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    // 这里设置的是允许所有的跨域，允许访问Get、Post、Put、Delete方法
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+            #endregion
+
+
             #region 数据库链接
             string connectionString = Configuration.GetSection("ConnectionString").GetSection("DbConnection").Value;
             services.AddDbContext<AppDbContext>(options =>
@@ -50,7 +66,7 @@ namespace WorkRecord.JwtServer
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(); 
+            }).AddJwtBearer();
             #endregion
 
             services.AddControllers();
@@ -64,11 +80,20 @@ namespace WorkRecord.JwtServer
                 app.UseDeveloperExceptionPage();
             }
 
+
+
             app.UseRouting();
+
+            #region 启用跨域中间件
+            // 启用跨域中间件
+            app.UseCors(MyAllowSpecificOrigins);
+            #endregion
 
             // 启用认证中间件
             app.UseAuthentication();
             app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {
